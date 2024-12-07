@@ -8,7 +8,7 @@ import lombok.Data;
  * @Author: krislorem
  * @Package: top.zjp.medicine.online.datav.entity
  * @Project: medicine-online-data-view-screen0
- * @name: tStudent
+ * @name: TStudent
  * @Date: 2024/12/5 19:24
  * @FileName: tStudent
  * @description:

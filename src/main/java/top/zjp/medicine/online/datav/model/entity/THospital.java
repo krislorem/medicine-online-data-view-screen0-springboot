@@ -8,20 +8,24 @@ import lombok.Data;
 
 /**
  * @Author: krislorem
- * @Package: top.zjp.medicine.online.datav.entity
+ * @Package: top.zjp.medicine.online.datav.model.entity
  * @Project: medicine-online-data-view-screen0
- * @name: TQuizExamStudent
- * @Date: 2024/12/6 16:30
- * @FileName: tQuizExamStudent
+ * @name: THospital
+ * @Date: 2024/12/7 12:54
+ * @FileName: THospital
  * @description:
  */
 @Data
-@Schema(description = "TQuizItemExamStudent")
-@TableName("t_quiz_item_exam_student")
-public class TQuizItemExamStudent {
+@Schema(description = "THospital 市区编码表")
+@TableName("t_hospital")
+public class THospital {
     @Schema(description = "主键唯一字段")
     @TableId(value = "pk_id", type = IdType.AUTO)
     private Integer pkId;
-    @Schema(description = "去重后即为应考人数")
-    private Integer studentId;
+    @Schema(description = "市区名称")
+    private String name;
+    @Schema(description = "地区编码 对应考生所在地区编码")
+    private String code;
+    @Schema(description = "地区所属市区编码")
+    private String parentCode;
 }

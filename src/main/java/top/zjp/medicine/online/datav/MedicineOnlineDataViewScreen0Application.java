@@ -7,7 +7,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 /**
- * @author GK_L2
+ * @author krislorem
  */
 @SpringBootApplication
 @MapperScan("top.zjp.medicine.online.datav.mapper")
