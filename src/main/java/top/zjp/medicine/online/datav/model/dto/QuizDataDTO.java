@@ -22,9 +22,9 @@ public class QuizDataDTO {
     @Schema(description = "考核名称")
     private List<String> titles;
     @Schema(description = "地区考核信息结果集")
-    private List<QuizCityDTO> quizCity;
+    private QuizCityDTO quizCity;
     @Schema(description = "考核信息结果集")
-    private List<QuizItemDTO> quizItem;
+    private QuizItemDTO quizItem;
     @Schema(description = "学员信息结果集")
-    private List<QuizStudentDTO> quizStudent;
+    private QuizStudentDTO quizStudent;
 }
