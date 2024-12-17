@@ -4,7 +4,6 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.zjp.medicine.online.datav.common.result.Result;
@@ -20,7 +19,7 @@ import java.util.*;
  * @name: quizDataController
  * @Date: 2024/12/6 16:44
  * @FileName: QuizDataController
- * @description:
+ * @description: 接口
  */
 @Tag(name = "考核数据")
 @RestController
@@ -76,7 +75,7 @@ public class QuizDataController {
             regionInfo.getFinishCountMap().merge(detail.getFinish(), 1, Integer::sum);
 
             // 考卷信息分组
-            PaperInfoDto paperInfo = examGroup.getPaperInfoList().stream()
+            examGroup.getPaperInfoList().stream()
                     .filter(p -> p.getPaper().equals(detail.getPaper()))
                     .findFirst()
                     .orElseGet(() -> {
@@ -100,8 +99,22 @@ public class QuizDataController {
         examGroups.values().forEach(examGroup -> {
             Set<String> uniquePapers = new HashSet<>();
             examGroup.getPaperInfoList().forEach(paperInfo -> uniquePapers.add(paperInfo.getPaper()));
-            examGroup.getStudentInfo().setPaperCount(uniquePapers.size()); // 设置去重后的考卷数量
+            // 设置去重后的考卷数量
+            examGroup.getStudentInfo().setPaperCount(uniquePapers.size());
+            // 确保成绩和完成状态的映射中包含所有必要的键
+            initMapIfAbsent(examGroup.getStudentInfo().getGradeCountMap(), 4);
+            initMapIfAbsent(examGroup.getStudentInfo().getFinishCountMap(), 2);
+
+            examGroup.getRegionInfoList().forEach(regionInfo -> {
+                initMapIfAbsent(regionInfo.getGradeCountMap(), 4);
+                initMapIfAbsent(regionInfo.getFinishCountMap(), 2);
+            });
         });
         return new ArrayList<>(examGroups.values());
+    }
+    private void initMapIfAbsent(Map<Integer, Integer> map, int end) {
+        for (int i = 0; i < end; i++) {
+            map.putIfAbsent(i, 0);
+        }
     }
 }

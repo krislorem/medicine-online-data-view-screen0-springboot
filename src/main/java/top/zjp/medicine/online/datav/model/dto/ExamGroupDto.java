@@ -15,17 +15,23 @@ import java.util.stream.Collectors;
  * @name: ExamGroupDto
  * @Date: 2024/12/16 13:59
  * @FileName: ExamGroupDto
- * @description:
+ * @description: ExamGroup
  */
 @Data
 @Schema(description = "ExamGroupDto")
 @NoArgsConstructor
 @AllArgsConstructor
 public class ExamGroupDto {
-    private String name; // 考试标题
-    private LocalDateTime end; // 结束时间
-    private Integer start; // 是否开始
-    private List<RegionInfoDto> regionInfoList; // 地区信息列表
-    private List<PaperInfoDto> paperInfoList; // 考卷信息列表
-    private StudentInfoDto studentInfo; // 学员信息
+    @Schema(description = "考试标题")
+    private String name;
+    @Schema(description = "是否开始")
+    private Integer start;
+    @Schema(description = "结束时间")
+    private LocalDateTime end;
+    @Schema(description = "考卷信息列表")
+    private List<PaperInfoDto> paperInfoList;
+    @Schema(description = "学员信息")
+    private StudentInfoDto studentInfo;
+    @Schema(description = "地区信息列表")
+    private List<RegionInfoDto> regionInfoList;
 }

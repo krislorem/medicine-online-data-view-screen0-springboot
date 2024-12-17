@@ -1,7 +1,6 @@
 package top.zjp.medicine.online.datav.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import io.swagger.v3.oas.annotations.media.Schema;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import top.zjp.medicine.online.datav.model.dto.ExamDetailDto;
@@ -15,7 +14,7 @@ import java.util.List;
  * @name: ExamMapper
  * @Date: 2024/12/12 16:35
  * @FileName: ExamMapper
- * @description:
+ * @description: 多表联查结果
  */
 @Mapper
 public interface ExamMapper extends BaseMapper<ExamDetailDto> {

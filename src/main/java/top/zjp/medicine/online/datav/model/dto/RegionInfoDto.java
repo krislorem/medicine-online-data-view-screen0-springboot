@@ -14,15 +14,19 @@ import java.util.Map;
  * @name: RegionInfoDto
  * @Date: 2024/12/16 14:00
  * @FileName: RegionInfoDto
- * @description:
+ * @description: RegionInfo
  */
 @Data
 @Schema(description = "RegionInfoDto")
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegionInfoDto {
-    private String city; // 地区名称
-    private int studentCount; // 学员数量
-    private Map<Integer, Integer> gradeCountMap; // 学员成绩数量映射
-    private Map<Integer, Integer> finishCountMap; // 是否完成数量映射
+    @Schema(description = "地区名称")
+    private String city;
+    @Schema(description = "学员数量")
+    private int studentCount;
+    @Schema(description = "是否完成数量映射")
+    private Map<Integer, Integer> finishCountMap;
+    @Schema(description = "学员成绩数量映射")
+    private Map<Integer, Integer> gradeCountMap;
 }

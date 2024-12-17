@@ -16,7 +16,7 @@ import java.util.List;
  * @name: ExamServiceImpl
  * @Date: 2024/12/12 16:39
  * @FileName: ExamServiceImpl
- * @description:
+ * @description: ExamService implementation
  */
 @Service
 @AllArgsConstructor

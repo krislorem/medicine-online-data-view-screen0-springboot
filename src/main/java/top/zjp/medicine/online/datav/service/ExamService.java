@@ -11,7 +11,7 @@ import java.util.List;
  * @name: ExamService
  * @Date: 2024/12/12 16:38
  * @FileName: ExamService
- * @description:
+ * @description: ExamService
  */
 public interface ExamService {
     List<ExamDetailDto> getExamDetailDtoList();

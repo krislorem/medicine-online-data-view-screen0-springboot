@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
  * @name: ExamDetailDto
  * @Date: 2024/12/12 16:33
  * @FileName: ExamDetailDto
- * @description:
+ * @description: ExamDetail
  */
 @Data
 @Schema(description = "Columns: 考试标题, 考卷名, 结束时间, 是否开始, 学员名, 地区名称, 单选分值, 多选分值, 填空分值, 单选数, 多选数, 填空数, 总题数, 总分, 成绩, 是否完成")

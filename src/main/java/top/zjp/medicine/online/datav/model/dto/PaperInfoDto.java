@@ -12,20 +12,29 @@ import lombok.NoArgsConstructor;
  * @name: PaperInfoDto
  * @Date: 2024/12/16 14:01
  * @FileName: PaperInfoDto
- * @description:
+ * @description: PaperInfo
  */
 @Data
 @Schema(description = "PaperInfoDto")
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaperInfoDto {
-    private String paper; // 考卷名
-    private Integer sin; // 单选分值
-    private Integer mul; // 多选分值
-    private Integer blank; // 填空分值
-    private Integer sinN; // 单选数
-    private Integer mulN; // 多选数
-    private Integer blankN; // 填空数
-    private Integer totalS; // 总分
-    private Integer totalN; // 总题数
+    @Schema(description = "考卷名")
+    private String paper;
+    @Schema(description = "单选分值")
+    private Integer sin;
+    @Schema(description = "多选分值")
+    private Integer mul;
+    @Schema(description = "填空分值")
+    private Integer blank;
+    @Schema(description = "单选数")
+    private Integer sinN;
+    @Schema(description = "多选数")
+    private Integer mulN;
+    @Schema(description = "填空数")
+    private Integer blankN;
+    @Schema(description = "总题数")
+    private Integer totalN;
+    @Schema(description = "总分")
+    private Integer totalS;
 }

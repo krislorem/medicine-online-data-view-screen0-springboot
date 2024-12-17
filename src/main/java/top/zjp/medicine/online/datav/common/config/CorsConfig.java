@@ -13,7 +13,7 @@ import org.springframework.web.filter.CorsFilter;
  * @name: CorsConfig
  * @Date: 2024/12/6 15:40
  * @FileName: CorsConfig
- * @description:
+ * @description: 跨域配置
  */
 @Configuration
 public class CorsConfig {

@@ -15,20 +15,20 @@ import java.util.Map;
  * @name: StudentInfoDto
  * @Date: 2024/12/16 14:05
  * @FileName: StudentInfoDto
- * @description:
+ * @description: StudentInfo
  */
 @Data
 @Schema(description = "StudentInfoDto")
 @AllArgsConstructor
 public class StudentInfoDto {
-    // 学员数量
-    private Map<Integer, Integer> gradeCountMap;
-    // 学员成绩数量映射
+    @Schema(description = "学员数量")
     private int studentCount;
-    // 是否完成数量映射
+    @Schema(description = "考卷数量")
     private int paperCount;
-    // 考卷数量
+    @Schema(description = "是否完成数量映射")
     private Map<Integer, Integer> finishCountMap;
+    @Schema(description = "学员成绩数量映射")
+    private Map<Integer, Integer> gradeCountMap;
 
     public StudentInfoDto() {
         this.studentCount = 0;
